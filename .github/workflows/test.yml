@@ -2,14 +2,8 @@ on: push
 
 jobs:
   execute_python:
-	runs-on: ubuntu-latest
-	container:
-		image: python:alpine3.17
-	- name: Checkout
-  	  uses: actions/checkout@v3
-  	  with:
-	name: json parsing
-	steps:
-	  run: |
-	    echo "executing python"
+    runs-on: ubuntu-latest
+    steps:
+			- name: checkout code
+				uses: actions/checkout@v2
 
