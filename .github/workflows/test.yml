@@ -20,4 +20,4 @@ jobs:
       - name: Execute Test Script
         run: |
           echo "Store: ${{ github.event.inputs.path_to_fileInput }}"
-          INPUT_STORE=${{ github.event.inputs.path_to_fileInput }} python3 main.py
+          PATH_TO_FILE=${{ github.event.inputs.path_to_fileInput }} python3 main.py
