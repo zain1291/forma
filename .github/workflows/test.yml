@@ -9,4 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: py main.py
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: python main.py
