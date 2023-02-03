@@ -1,7 +1,12 @@
 name: python example
 
 on:
-  push
+   workflow_dispatch:
+     inputs:
+       path_to_fileInput:
+         description: 'Enter the path to file'
+         required: true
+         default: "/home/runner/work/forma/forma/forma.json"
 
 
 jobs:
@@ -12,4 +17,7 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - run: python main.py
+      - name: Execute Test Script
+        run: |
+          echo "Store: ${{ github.event.inputs.path_to_fileInput }}"
+          INPUT_STORE=${{ github.event.inputs.path_to_fileInput }} python3 main.py
